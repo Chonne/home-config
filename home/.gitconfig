@@ -1,0 +1,69 @@
+[user]
+        email = shnuq@hotmail.com
+        name = Shaun Lecathelinais
+        # signingkey = /Users/shaunlecathelinais/.ssh/id_ed25519_sign.pub
+[core]
+        autocrlf = input
+[gpg]
+        format = ssh
+# [commit]
+        # gpgsign = true
+[push]
+        autoSetupRemote = true
+[rerere]
+        enabled = true
+[alias]
+        lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+        lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        st = status
+
+  pf = "push --force-with-lease"
+  # Starts an interactive rebase by selecting a commit with fzf
+  # "fuzzy rebase"
+  frebase = "!f() { \
+    git log --pretty=oneline \
+    | fzf \
+    | awk '{print $1\"^\"}' \
+    | xargs -o git rebase --autostash -i; \
+    }; f"
+  # Starts an interactive rebase by selecting a commit with fzf
+  # using the --onto parameter. Useful to rebase on top of a rebased branch.
+  # "fuzzy rebase onto"
+  #
+  # Usage: git frebase TARGET_BRANCH
+  # then interactively select the first commit of your branch
+  frebaseonto = "!f() { \
+    git log --pretty=oneline \
+    | fzf \
+    | awk '{print $1\"^\"}' \
+    | xargs -o git rebase --autostash --onto $1; \
+    }; f"
+  frebaseontomain = "!f() { \
+    git fetch && \
+    git log --pretty=oneline \
+    | fzf \
+    | awk '{print $1\"^\"}' \
+    | xargs -o git rebase --autostash --onto origin/main; \
+    }; f"
+  # Amend into a past commit using fzf
+  # Stage your changes `git add -p`, then run `git autofixup` and choose the target commit
+  autofixup = "!f() { \
+      COMMIT=$(git log --pretty=oneline | fzf | awk '{print $1}'); \
+      git commit --fixup $COMMIT; \
+      GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT^; \
+    }; f"
+
+  sha = "!f() { \
+    git log --pretty=oneline \
+    | fzf \
+    | awk '{print $1}'; \
+		}; f"
+
+	fixup = "!f() { \
+      COMMIT=$(git sha); \
+      git commit --fixup $COMMIT; \
+      GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT^; \
+    }; f"
+
+	freset = "!f() { git sha | xargs -I{} git reset {}^; }; f"
+
