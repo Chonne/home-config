@@ -1,0 +1,28 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.11.2",
+  "schemes" : [
+    {
+      "buttons" : {
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xc068",
+          "productName" : "G500",
+          "serialNumber" : "D5B63D1CFD0018",
+          "vendorID" : "0x46d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 0.4223,
+        "speed" : 0.173
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      }
+    }
+  ]
+}

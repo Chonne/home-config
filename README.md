@@ -10,15 +10,78 @@ These are mainly used on my macbook pro running macos, but they should work on l
 
 The config available in `./home/.zshrc` should probably not be used as is but it contains useful things like the plugins list.
 
+### Kitty
+
+Make sure the terminal works fine when connecting to another server: `kitten ssh <server>`. The current `.zshrc` file contains an alias for `ssh`.
+
+### Default CLI editor
+
+If the default CLI editor isn't suitable, it can be changed with `sudo update-alternatives --config editor` (in ubuntu).
+
 ## Macos specific
 
-### Window management - hammerspoon-shiftit
+### Window management - Rectangle
 
-Source: <https://github.com/peterklijn/hammerspoon-shiftit>
+Source: https://rectangleapp.com/
 
-Follow the steps from the readme, the default config is fine. The link also contains the list of keyboard shortcuts.
+Follow the installation instructions.
 
-I did include my config in `./home/.hammerspoon` in case it may prove useful.
+The list of keyboard shorcuts is available when clicking in the top bar icon, here are the most common (azerty keyboard, if that matters):
+
+- move and resize window to left half: `^ ⌥ ←`
+- move and resize window to right half: `^ ⌥ →`
+- resize window to full screen: `^ ⌥ ↵`
+- make window smaller: `^ ⌥ )`
+- make window larger: `^ ⌥ -`
+- move window to screen on the right: `^ ⌥ ⌘ + →`
+
+The default settings are fine.
+
+### Window switcher - DockDoor
+
+Source: https://dockdoor.net/
+
+Follow the installation instructions.
+
+#### Config
+
+I've exported my current settings using the following:
+
+```
+defaults export com.ethanbills.DockDoor ./settings/DockDoorSettings.plist
+plutil -convert xml1 ./settings/DockDoorSettings.plist
+# If any changes are made to the file, make sure it's still valid
+plutil ./settings/DockDoorSettings.plist
+# it should display something like: ./settings/DockDoorSettings.plist: OK
+```
+
+Then I removed a few keys specific to my current setup (app specific preferences).
+
+To import my settings:
+
+```
+defaults import com.ethanbills.DockDoor ./settings/DockDoorSettings.plist
+# Not sure if that's needed or if it even works, it's supposed to:
+# "force macOS to flush its preferences cache so it registers the imported changes immediately"
+killall cfprefsd
+```
+
+### Mouse manager
+
+For some reason, scrolling naturally is shared between the trackpad and the mouse. An app like LinearMouse can make them independent and improves speed, acceleration and button management.
+
+Source: https://linearmouse.app/en/
+
+Install via homebrew: `brew install --cask linearmouse`
+
+Then, if using my logitech G500 (not sure if it'll work with any other mouse), import my settings:
+
+```
+mkdir -p ~/.config/linearmouse
+cp ./home/.config/linearmouse/linearmouse.json ~/.config/linearmouse/linearmouse.json
+```
+
+Then start/restart linearmouse.
 
 ## Snippets
 

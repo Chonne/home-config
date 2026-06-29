@@ -107,12 +107,9 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-#export GITHUB_TOKEN=""
-#export NPM_TOKEN=""
-
 alias ll='ls -alhG'
 
-#if command -v ngrok &>/dev/null; then
-#    eval "$(ngrok completion)"
-#fi
-#export PATH="/Users/shaun/.asdf/shims:$PATH"
+# Alias ssh to kitty's wrapper, but only inside Kitty terminal
+if [ "$TERM" = "xterm-kitty" ] || [ -n "$KITTY_PID" ]; then
+    alias ssh="kitten ssh"
+fi
