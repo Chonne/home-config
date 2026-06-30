@@ -2,45 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-        <key>NSStatusItem Preferred Position Item-0</key>
-        <real>510</real>
-        <key>NSWindow Frame SUUpdateAlert2</key>
-        <string>2396 493 585 402 1728 -83 1920 1170 </string>
-        <key>SUAutomaticallyUpdate</key>
-        <true/>
-        <key>SUEnableAutomaticChecks</key>
-        <true/>
-        <key>SUHasLaunchedBefore</key>
-        <true/>
-        <key>SULastCheckTime</key>
-        <date>2026-06-30T10:31:05Z</date>
-        <key>SUSendProfileInfo</key>
-        <false/>
-        <key>SUUpdateGroupIdentifier</key>
-        <integer>48046728</integer>
-        <key>cmdTabAutoSelectFirstWindow</key>
-        <true/>
-        <key>cmdTabBackwardCycleKey</key>
-        <integer>31</integer>
-        <key>cmdTabUseEmbeddedDockPreviewElements</key>
-        <true/>
-        <key>enableCmdTabEnhancements</key>
-        <true/>
-        <key>hasSeenCmdTabFocusHint</key>
-        <true/>
-        <key>instantWindowSwitcher</key>
-        <true/>
-        <key>lastKnownScreenRecordingPermission</key>
-        <true/>
-        <key>launched</key>
-        <true/>
-        <key>mouseFollowsFocusMode</key>
-        <string>differentDisplayOnly</string>
-        <key>reopenSettingsAfterRestart</key>
-        <false/>
-        <key>showWindowlessAppsInCmdTab</key>
-        <true/>
-        <key>windowSwitcherSortOrder</key>
-        <string>alphabeticalByAppName</string>
+	<key>NSStatusItem Preferred Position Item-0</key>
+	<real>510</real>
+	<key>NSWindow Frame SUUpdateAlert2</key>
+	<string>2396 493 585 402 1728 -83 1920 1170 </string>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
+	<key>SULastCheckTime</key>
+	<date>2026-06-30T10:31:05Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>48046728</integer>
+	<key>cmdTabAutoSelectFirstWindow</key>
+	<true/>
+	<key>cmdTabBackwardCycleKey</key>
+	<integer>31</integer>
+	<key>cmdTabUseEmbeddedDockPreviewElements</key>
+	<true/>
+	<key>enableCmdTabEnhancements</key>
+	<true/>
+	<key>hasSeenCmdTabFocusHint</key>
+	<true/>
+	<key>instantWindowSwitcher</key>
+	<true/>
+	<key>lastKnownScreenRecordingPermission</key>
+	<true/>
+	<key>launched</key>
+	<true/>
+	<key>mouseFollowsFocusMode</key>
+	<string>never</string>
+	<key>reopenSettingsAfterRestart</key>
+	<false/>
+	<key>requireShiftTabToGoBack</key>
+	<true/>
+	<key>showWindowlessAppsInCmdTab</key>
+	<true/>
+	<key>windowSwitcherSortOrder</key>
+	<string>alphabeticalByAppName</string>
 </dict>
 </plist>
