@@ -13,7 +13,7 @@
         <key>SUHasLaunchedBefore</key>
         <true/>
         <key>SULastCheckTime</key>
-        <date>2026-06-29T11:43:50Z</date>
+        <date>2026-06-30T10:31:05Z</date>
         <key>SUSendProfileInfo</key>
         <false/>
         <key>SUUpdateGroupIdentifier</key>
@@ -35,8 +35,12 @@
         <key>launched</key>
         <true/>
         <key>mouseFollowsFocusMode</key>
-        <string>never</string>
+        <string>differentDisplayOnly</string>
         <key>reopenSettingsAfterRestart</key>
         <false/>
+        <key>showWindowlessAppsInCmdTab</key>
+        <true/>
+        <key>windowSwitcherSortOrder</key>
+        <string>alphabeticalByAppName</string>
 </dict>
 </plist>

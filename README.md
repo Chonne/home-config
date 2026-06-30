@@ -55,7 +55,7 @@ plutil ./settings/DockDoorSettings.plist
 # it should display something like: ./settings/DockDoorSettings.plist: OK
 ```
 
-Then I removed a few keys specific to my current setup (app specific preferences).
+Then I removed a few keys specific to my current setup (persistedWindowOrder array).
 
 To import my settings:
 
