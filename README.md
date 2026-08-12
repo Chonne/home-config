@@ -189,9 +189,32 @@ By using Butler (Automation), we can automate the creation of a card every Monda
 
 For this exact automation, you'll need two lists: "Doing" and "Done / To Archive".
 
-In Butler's rules, create one with this content: `when a card with a name starting with "Week" in list "Doing" is moved into list "Done / To Archive", copy the card without comments to the top of list "Doing", rename the card to "Week {date=1wd~MM/DD} - {date=5wd~MM/DD}", remove the "Monday" checklist from the card, remove the "Tuesday" checklist from the card, remove the "Wednesday" checklist from the card, remove the "Thursday" checklist from the card, remove the "Friday" checklist from the card, remove the "Next Week" checklist from the card, add the "Next Week" checklist from card "{triggercardname}" renamed to "Monday" to the card, add an empty checklist named "Tuesday" to the card, add an empty checklist named "Wednesday" to the card, add an empty checklist named "Thursday" to the card, add an empty checklist named "Friday" to the card, add an empty checklist named "Next Week" to the card, set the card's description to "Previous week's checklists: {triggercardcheckliststate}", and add item "dependabot" to checklist "Monday"`
+Unfortunately, Trello doesn't currently (2026/08/12) allow easy automation import nor sharing outside of the workspace, so the following texts are just indicators of what the end result should look like. I'll add screenshots of what the contents in the web UI actually look like.
+
+:grey_exclamation: Checklists are added manually and not simply reset with "Monday" imported at the end because it would have been added at the end. AFAIK checklists can't be moved.
+In Butler's rules, create one with this content: `when a card with a name starting with "Week" in list "Doing" is moved into list "Done / To Archive", copy the card without comments to the top of list "Doing" and link the cards together, rename the card to "Week {date=1wd~MM/DD} - {date=5wd~MM/DD}", remove all the checklists from the card, add the "Next Week" checklist from card "{triggercardname}" renamed to "Monday" to the card, add an empty checklist named "Tuesday" to the card, add an empty checklist named "Wednesday" to the card, add an empty checklist named "Thursday" to the card, add an empty checklist named "Friday" to the card, add an empty checklist named "Next Week" to the card, and set the card's description to "Previous week's checklists: {triggercardcheckliststate}"`
+
+<!-- markdownlint-disable MD033 -->
+<details>
+  <summary>Screenshots of the rule</summary>
+
+  ![trello automation rule every monday 1](./images/trello-automation-rule-monday-1.png)
+
+  ![trello automation rule every monday 2](./images/trello-automation-rule-monday-2.png)
+
+  ![trello automation rule every monday 3](./images/trello-automation-rule-monday-3.png)
+</details>
+<!-- markdownlint-enable MD033 -->
 
 In Butler's schedules, add this one: `every monday, move each card with a name starting with "Week" in list "Doing" to list "Done / To Archive"`
+
+<!-- markdownlint-disable MD033 -->
+<details>
+  <summary>Screenshot of the schedule</summary>
+
+  ![trello automation scheduled every monday](./images/trello-automation-scheduled-monday.png)
+</details>
+<!-- markdownlint-enable MD033 -->
 
 To create your first card, create one in a "Doing" list, entitled `Week initial`.
 
